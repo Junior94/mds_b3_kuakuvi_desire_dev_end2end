@@ -1,0 +1,30 @@
+{
+  "name": "mds_b3_kuakuvi_desire_dev_end2end",
+  "version": "1.0.0",
+  "description": "Functional testing",
+  "main": "nightwatch.conf.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/nightwatch ./tests/uber.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Junior94/mds_b3_kuakuvi_desire_dev_end2end.git"
+  },
+  "author": "MDS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Junior94/mds_b3_kuakuvi_desire_dev_end2end/issues"
+  },
+  "homepage": "https://github.com/Junior94/mds_b3_kuakuvi_desire_dev_end2end#readme",
+  "dependencies": {
+    "nightwatch": "^1.5.1"
+  },
+  "devDependencies": {
+    "chromedriver": "^87.0.7",
+    "geckodriver": "^1.21.1",
+    "selenium-server": "^3.141.59"
+  }
+}
