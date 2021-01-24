@@ -50,3 +50,31 @@ test('Check block login in the header wrapper', function (browser) {
       .useCss()
       .end();
   })
+
+  test('Check login passenger section', function (browser) {
+    browser
+      .waitForElementVisible('body')
+      .useXpath()
+      .assert.visible('//[@id="main"]/nav/div/ul[4]/li[4]/button', 'Sign in button is visible')
+      .click('//[@id="main"]/nav/div/ul[4]/li[4]/button', () => console.log('Click on sign in button'))
+      .assert.visible('//[@id="root"]/div/div/div[2]/div/div[3]/div/div[2]/div/div[4]/section/div/div/div/div/div[3]/a', 'Passenger sign in button is visible')
+      .click('//[@id="root"]/div/div/div[2]/div/div[3]/div/div[2]/div/div[4]/section/div/div/div/div/div[3]/a', () => console.log('Click on passenger sign in button'))
+      .useCss()
+      .waitForElementVisible('body')
+      .assert.urlContains('https://auth.uber.com/login/', 'URL is correct')
+      .assert.urlContains('next_url=https%3A%2F%2Fm.uber.com', 'Redirect URL is correct')
+      .assert.visible('#mobile', 'The input connexion phone exist')
+      .assert.visible('#next-button', 'A button to go on next page exist')
+      .useXpath()
+      .assert.visible('//[@id="app-content"]/div/div/div/div/div/div/div/div[2]/div/a', 'A link to the connection with social medias exist')
+      .click('//[@id="app-content"]/div/div/div/div/div/div/div/div[2]/div/a', () => console.log('Click on link to connection with social medias'))
+      .useCss()
+      .waitForElementVisible('body')
+      .assert.urlContains('https://auth.uber.com/login/social/', 'URL is correct')
+      .assert.urlContains('next_url=https%3A%2F%2Fm.uber.com', 'Redirect URL is correct')
+      .useXpath()
+      .assert.visible('//*[@id="app-content"]/div/div/div/div/div/a[1]', 'The Facebook connection's button exists')
+      .useCss()
+      .assert.visible('#googleLoginButton', 'The Google connection's button exists')
+      .end();
+  });
