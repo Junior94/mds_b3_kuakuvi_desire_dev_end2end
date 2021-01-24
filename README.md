@@ -1,5 +1,10 @@
-Pour lancer les tests :
+# mds_b3_kuakuvi_desire_dev_end2end
+# mds_b3_kuakuvi_desire_dev_end2end
 
-Revoir le fichier package.json :
+## Install packages
 
-> ./node_modules/.bin/nightwatch ./tests/uber.js
+npm install
+
+## Launch test
+
+npm test
